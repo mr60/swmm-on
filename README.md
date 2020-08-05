@@ -19,17 +19,14 @@ The tool provides scripts for,
 
 
 ## Utility tools
+
 Folder XXX contains utility programs for various tasks. 
--
--
--
--
 
 
 ## General information
 All the scripts are written in Python 3. They have been tested in Mac OS Catalina. 
 
-The packages required are:
+The packages required are,
 
 - Pandas
 - Geopandas
