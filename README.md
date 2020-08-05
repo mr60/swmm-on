@@ -1,9 +1,9 @@
 
 # SWMM-ON 
 
-### Mayra Rodriguez
-### University of Exeter, 2020
-### QUEX INSTITUTE
+Mayra Rodriguez
+University of Exeter, 2020
+QUEX INSTITUTE
 
 SWMM-ON is an interface tool between SWMM5 & python, for data adquisition and manipulation. 
 
