@@ -1,30 +1,5 @@
 
-'''
-                r                
-               ain
-               rai
-              nrain
-             rainrai
-            nrainrain
-           ainrainrain
-          rainrainrainr
-         ainrainrainrain
-        rainrainrainrainr
-      ainrainrainrainrainra
-    inra nrainrainrainrainrai
-  nrain  inrainrainrainrainrain
- rain   nrainrainrainrainrainrai
-nrai   inrainrainrainrainrainrain
-rai   inrainrainrainrainrainrainr
-rain   nrainrainrainrainrainrainr
- rainr  nrainrainrainrainrainrai
-  nrain ainrainrainrainrainrain
-    rainrainrainrainrainrainr
-      rainranirainrainrainr
-           ainrainrain
-
-'''
-## SWMM-ON 
+# SWMM-ON 
 
 ### Mayra Rodriguez
 ### University of Exeter, 2020
