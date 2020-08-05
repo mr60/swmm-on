@@ -39,5 +39,5 @@ The packages required are,
 - PySWMM
 - SWMM tool box
 
-## Examples
+## Applications
 The folder XX contains examples of data extrated using SWMM-on tools, using a case-study in the United Kingdom. 
