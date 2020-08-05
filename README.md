@@ -5,11 +5,11 @@ Mayra Rodriguez
 University of Exeter, 2020
 QUEX INSTITUTE
 
-SWMM-ON is an interface tool between SWMM5 & python, for data adquisition and manipulation. 
+SWMM-ON is an interface tool between SWMM5 & Python, for data adquisition and manipulation. 
 
 Using this tool, SWMM input files can be,
 
-1. Used to extract information and use it in Python for data adquisition and handling of the catchment studied.
+1. Used to extract information and use it in Python. This allows easy manipulation of the characteristics of the catchment studied, and also easy to generate maps. 
 2. Modified in various ways, including rainfall changes, as well as characteristics of subcatchments and GI implementation.
 
 The tool provides scripts for,
