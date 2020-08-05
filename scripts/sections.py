@@ -1,6 +1,6 @@
 '''
 
-                                                        r                
+                                                        r
                                                        ain
                                                        rai
                                                       nrain
@@ -22,75 +22,73 @@
                                             rainrainrainrainrainrainr
                                               rainranirainrainrainr
                                                    ainrainrain
-                                                   
+
                                                        SWMM
 
 University of EXETER, 2020
 Mayra Rodriguez
 
-This script allows the identification of the main sections in a given SWMM input file. This allows an easy extraction and access of all the information contained in the input file for use in Python. 
+This script allows the identification of the main sections in a given SWMM input file. This allows an easy extraction and access of all the information contained in the input file for use in Python.
 
-The first function imports the input file into a Pandas' Data Frame. 
+The first function imports the input file into a Pandas' Data Frame.
 
-The second's function output is a python's Dictionary, where the keys are the name of the section and the values are Pandas' Data Frames. 
+The second's function output is a python's Dictionary, where the keys are the name of the section and the values are Pandas' Data Frames.
 
 IMPORTANT NOTE!
 ---------------
-As sometimes the columns are not filled, this may cause problems with importing the file. If you have errors, please check in the sections, if there is an incongruence with the columns and what is written in the code. 
+As sometimes the columns are not filled, this may cause problems with importing the file. If you have errors, please check in the sections, if there is an incongruence with the columns and what is written in the code.
 
 '''
 
 #IMPORT PACKAGES
 #========================
 import sys, os
-import math 
+import math
 import numpy as np
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
 import geopandas as gpd
 
 def import_inputfile(filename):
-    
+
     '''
     Imports the INPUTFILE into a pandas dataframe.
-    
+
     Inputs
     ------
     filename: filename/path for the input file this must be a text file correctly formatted for SWMM.
-    
+
     Outputs
     -------
     the input: pandas dataframe of the template file, with one column, and a line for each line of text.
     '''
-    
+
     theinputer=pd.read_csv(filename, header=None, skip_blank_lines=False)
-    
+
     return theinputer
 
 
 def deteriminesections(df):
-    
+
     '''
     SWMM input into Python - As dataframe
-    
+
     Input
     -----
     Swmm file as a pandas dataframe
-    
+
     Output
     ------
     Dictionary containing all the sections of the input file
-    
+
     '''
-   
-    
+
+
     #Deterimines the indexes for the different sections
     theindexes= df[df[0].str.contains('[',regex=False)==True].copy()
     ind=theindexes.to_dict()
     ind=ind[0]
     ind= {value:key for key, value in ind.items()}
-    
+
     #Create a Dataframe for each section of the input file
     inputer={}
     indexes=list(ind.values())
@@ -296,7 +294,7 @@ def deteriminesections(df):
     inputer['curves'].drop(columns=['curves'],index=[0,1],inplace=True)
     inputer['curves'].reset_index(drop=True,inplace=True)
 
-    #Dropping strange rows with ;None 
+    #Dropping strange rows with ;None
     theannoyingcomment=inputer['curves'][inputer['curves']['Name'].str.contains(';',regex=False)==True].copy()
     ind=theannoyingcomment.to_dict()
     ind=ind['Name']
@@ -358,5 +356,3 @@ def deteriminesections(df):
     inputer['polygons'][['X','Y']]=inputer['polygons'][['X','Y']].astype(float)
 
     return inputer
-
-

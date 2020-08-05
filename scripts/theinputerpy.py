@@ -24,8 +24,7 @@ import sys, os
 import math
 import numpy as np
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
+
 
 #MODEL SETUP
 #=============================
@@ -742,11 +741,11 @@ def get_flood(filename):
 
 def setraingage(theinputer,rainfallname):
 
-    ind=theinputer.index[theinputer[0]=='[RAINGAGES]'] 
-    loc=theinputer.index.get_loc(ind[0])  
+    ind=theinputer.index[theinputer[0]=='[RAINGAGES]']
+    loc=theinputer.index.get_loc(ind[0])
 
-    ind2=theinputer.index[theinputer[0]=='[SUBCATCHMENTS]'] 
-    loc2=theinputer.index.get_loc(ind2[0]) 
+    ind2=theinputer.index[theinputer[0]=='[SUBCATCHMENTS]']
+    loc2=theinputer.index.get_loc(ind2[0])
 
     #load entire base model input file
     newstorm='1\tVOLUME\t00:01\t1\tTIMESERIES\t' + rainfallname
@@ -758,5 +757,5 @@ def setraingage(theinputer,rainfallname):
 
     theinputermodified=dfA
     theinputermodified=theinputermodified.append(dfB, ignore_index=True)
-    
+
     return theinputermodified
